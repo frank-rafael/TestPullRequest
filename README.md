@@ -29,7 +29,7 @@ POSTGRES_DATABASE=transactions
 ### Create transaction
 ```graphql
 mutation  {
-	createTransaction(createTransactionInput:{
+  createTransaction(createTransactionInput:{
     accountExternalIdDebit: "" ,
     accountExternalIdCredit: "",
     transferTypeId: 1,
