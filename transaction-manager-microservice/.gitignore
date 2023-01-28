@@ -39,3 +39,4 @@ prisma/migrations/20230127034122_yape_reto_dev/migration.sql
 prisma/migrations/20230127075202_yape_reto_dev/migration.sql
 prisma/migrations/20230127083036_yape_reto_dev/migration.sql
 package-lock.json
+.env
