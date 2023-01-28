@@ -1,11 +1,10 @@
 # Yape-Code-Challenge
-### Challenge using the following technologies:
+### Tech Stack
 - NestJS
-- Typescript
 - GraphQL
-- Kafka
+- Prisma
 - Postgres
-- Docker
+- Kafka
 
 ## Initial Setup
 
@@ -29,9 +28,18 @@ POSTGRES_DATABASE=transactions
 
 ### Create transaction
 ```graphql
-query HeroNameQuery {
-  hero {
-    name
+mutation  {
+	createTransaction(createTransactionInput:{
+    accountExternalIdDebit: "" ,
+    accountExternalIdCredit: "",
+    transferTypeId: 1,
+    value: 1001
+  }){
+    transactionExternalId,
+    transactionType{name},
+    transactionStatus{name},
+    value,
+    createdAt
   }
 }
 ```
@@ -39,9 +47,13 @@ query HeroNameQuery {
 
 ### Retrieve transaction
 ```graphql
-query HeroNameQuery {
-  hero {
-    name
+query{
+  retrieveTransactionById(id:"GUID"){
+    transactionExternalId,
+    transactionType{name},
+    transactionStatus{name},
+    value,
+    createdAt
   }
 }
 ```
